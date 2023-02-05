@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: thistle;">
+    <div class="countainer">
+        <h1>Tell us about your pet!</h1>
+        <form action="/process" method="POST"> 
+            <label for="name">NAME</label>  <!--request.form['name'] -->
+            <input name="name" type="text">
+            <label for="AGE">AGE</label>     <!--request.form['age'] -->
+            <input name="AGE" type="number">
+                <select name="type" id="">       <!--request.form['type'] -->
+                    {% for animal in animal_list %}
+                        <option value="{{animal}}"> {{animal}} </option>
+                    {% endfor %}
+                </select><br><br>
+            <label for="comments"> COMMENTS </label><br>
+            <textarea name="comments" id="" cols="30" rows="10"></textarea><br>  <!--request.form['comments'] -->
+            <input type="submit" value="Submit!">
+        </form>
+
+    </div>
+    
+</body>
+</html>
